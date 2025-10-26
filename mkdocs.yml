@@ -1,0 +1,179 @@
+site_name: Symphra Container
+site_description: Enterprise-grade Python Dependency Injection Container
+site_author: getaix
+site_url: https://getaix.github.io/symphra-container
+docs_dir: docs
+site_dir: site
+repo_url: https://github.com/getaix/symphra-container.git
+repo_name: symphra-container
+edit_uri: edit/main/docs/
+
+# ============ Navigation ============
+nav:
+  - 首页: index.md
+  - 中文文档:
+    - 快速开始: zh/quick-start.md
+    - 安装指南: zh/installation.md
+    - 核心概念: zh/concepts.md
+    - API 参考:
+      - 容器（Container）: zh/guaids/container.md
+      - 生命周期与类型（Lifetimes & Types）:
+        - 生命周期（Lifetime）: zh/guaids/types-lifetime.md
+        - 注入标记（InjectionMarker）: zh/guaids/types-injection-marker.md
+        - 注入值（Injected）: zh/guaids/types-injected.md
+        - 服务键（ServiceKey）: zh/guaids/types-service-key.md
+      - 构造函数注入:
+        - 构造函数注入器（ConstructorInjector）: zh/guaids/injector-constructor.md
+        - 依赖信息（DependencyInfo）: zh/guaids/injector-dependency-info.md
+      - 泛型支持:
+        - 泛型键（GenericKey）: zh/guaids/generics-generic-key.md
+        - 注册泛型（register_generic）: zh/guaids/generics-register-generic.md
+        - 解析泛型（resolve_generic）: zh/guaids/generics-resolve-generic.md
+      - 可视化与诊断:
+        - 诊断器（ContainerDiagnostic）: zh/guaids/visualization-container-diagnostic.md
+        - 可视化容器（visualize_container）: zh/guaids/visualization-visualize-container.md
+        - 打印依赖图（print_dependency_graph）: zh/guaids/visualization-print-dependency-graph.md
+        - 解析调试（debug_resolution）: zh/guaids/visualization-debug-resolution.md
+        - 诊断容器（diagnose_container）: zh/guaids/visualization-diagnose-container.md
+      - 框架集成（API）:
+        - FastAPI 注入（fastapi_inject）: zh/guaids/integrations-fastapi-inject.md
+        - FastAPI 设置（setup_fastapi）: zh/guaids/integrations-setup-fastapi.md
+        - Flask 容器（FlaskContainer）: zh/guaids/integrations-flask-container.md
+        - Django 容器（DjangoContainer）: zh/guaids/integrations-django-container.md
+    - 最佳实践: zh/best-practices.md
+    - 测试指南: zh/testing-guide.md
+    - 框架集成:
+      - FastAPI: zh/integrations/fastapi.md
+      - Flask: zh/integrations/flask.md
+      - Django: zh/integrations/django.md
+    - 常见问题: zh/faq.md
+    - 变更日志: zh/changelog.md
+  - English Documentation:
+    - Getting Started: en/getting-started.md
+    - Installation: en/installation.md
+    - Core Concepts: en/concepts.md
+    - Best Practices: en/best-practices.md
+    - Testing Guide: en/testing-guide.md
+    - API Reference:
+      - Container: en/guaids/container.md
+      - Lifetimes & Types:
+        - Lifetime: en/guaids/types-lifetime.md
+        - Injected: en/guaids/types-injected.md
+        - ServiceKey: en/guaids/types-service-key.md
+        - InjectionMarker: en/guaids/types-injection-marker.md
+      - Constructor Injection:
+        - ConstructorInjector: en/guaids/injector-constructor.md
+        - DependencyInfo: en/guaids/injector-dependency-info.md
+      - Generics:
+        - GenericKey: en/guaids/generics-generic-key.md
+        - register_generic: en/guaids/generics-register-generic.md
+        - resolve_generic: en/guaids/generics-resolve-generic.md
+      - Visualization & Diagnostics:
+        - ContainerDiagnostic: en/guaids/visualization-container-diagnostic.md
+        - visualize_container: en/guaids/visualization-visualize-container.md
+        - print_dependency_graph: en/guaids/visualization-print-dependency-graph.md
+        - debug_resolution: en/guaids/visualization-debug-resolution.md
+        - diagnose_container: en/guaids/visualization-diagnose-container.md
+      - Framework Integrations (API):
+        - fastapi_inject: en/guaids/integrations-fastapi-inject.md
+        - setup_fastapi: en/guaids/integrations-setup-fastapi.md
+        - FlaskContainer: en/guaids/integrations-flask-container.md
+        - DjangoContainer: en/guaids/integrations-django-container.md
+    - Framework Integration:
+      - FastAPI: en/integrations/fastapi.md
+      - Flask: en/integrations/flask.md
+      - Django: en/integrations/django.md
+    - FAQ: en/faq.md
+    - Changelog: en/changelog.md
+
+# ============ Theme Configuration ============
+theme:
+  name: material
+  language: zh
+  palette:
+    - scheme: default
+      primary: blue
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: blue
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.tracking
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - search.share
+    - toc.follow
+
+# ============ Plugins ============
+plugins:
+  - search:
+      lang:
+        - en
+        - zh
+  # - i18n:
+  #     languages:
+  #       - locale: zh
+  #         name: 中文
+  #         default: true
+  #         build: true
+  #       - locale: en
+  #         name: English
+  #         build: true
+  # - autorefs:
+  #     resolve_closest: true
+  - mkdocstrings:
+      default_handler: python
+      handlers:
+        python:
+          paths:
+            - src
+  # - minify:
+  #     minify_html: true
+  #     minify_css: true
+  #     minify_js: true
+
+# ============ Extensions ============
+markdown_extensions:
+  - pymdownx.emoji
+  - pymdownx.highlight:
+      use_pygments: true
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.details
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+
+# ============ Extra Configuration ============
+extra:
+  version: 0.1.0
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/getaix/symphra-container
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com
+
