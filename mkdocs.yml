@@ -12,9 +12,14 @@ edit_uri: edit/main/docs/
 nav:
   - 首页: index.md
   - 中文文档:
+    - 首页: zh/INDEX.md
     - 快速开始: zh/quick-start.md
     - 安装指南: zh/installation.md
     - 核心概念: zh/concepts.md
+    - 开发指南:
+      - 开发环境设置: zh/development/DEVELOPMENT_SETUP.md
+      - 快速开始指南: zh/guides/QUICK_START_UV.md
+      - 指南说明: zh/guides/README.md
     - API 参考:
       - 容器（Container）: zh/guaids/container.md
       - 生命周期与类型（Lifetimes & Types）:
@@ -40,6 +45,10 @@ nav:
         - FastAPI 设置（setup_fastapi）: zh/guaids/integrations-setup-fastapi.md
         - Flask 容器（FlaskContainer）: zh/guaids/integrations-flask-container.md
         - Django 容器（DjangoContainer）: zh/guaids/integrations-django-container.md
+    - 技术参考:
+      - API设计: zh/reference/API_DESIGN.md
+      - 高级功能实现: zh/reference/ADVANCED_FEATURES_IMPLEMENTATION.md
+      - 技术规范: zh/reference/TECHNICAL_SPEC.md
     - 最佳实践: zh/best-practices.md
     - 测试指南: zh/testing-guide.md
     - 框架集成:
@@ -139,6 +148,14 @@ plugins:
         python:
           paths:
             - src
+          options:
+            # 处理多语言环境中的重复引用
+            show_root_heading: true
+            show_root_toc_entry: true
+            inherited_members: true
+            # 禁用自动引用生成以避免冲突
+            show_symbol_type_heading: false
+            show_symbol_type_toc: false
   # - minify:
   #     minify_html: true
   #     minify_css: true
